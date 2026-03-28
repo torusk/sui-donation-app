@@ -3,27 +3,43 @@
 }
 
 :root {
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --text: #111111;
+  --text-sub: #777777;
+  --text-muted: #aaaaaa;
+  --border: #e8e8e4;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
-  background: #fafafa;
+  color: var(--text);
+  background: var(--bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   margin: 0;
   min-height: 100svh;
+  min-height: -webkit-fill-available;
 }
 
 #root {
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 p {
@@ -32,9 +48,13 @@ p {
 
 button {
   font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
 }
 
-img {
-  display: block;
-  max-width: 100%;
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

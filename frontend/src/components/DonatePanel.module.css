@@ -1,0 +1,178 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* 未接続 */
+.connectButton {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--text);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.connectButton:hover {
+  opacity: 0.88;
+}
+
+.connectButton:active {
+  transform: scale(0.98);
+}
+
+.hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ローディング */
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--border);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 接続済み */
+.balanceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.balanceLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.balanceValue {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+/* 丸める単位 */
+.unitSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.unitLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.unitButtons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.unitButton {
+  padding: 12px 8px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-sub);
+  transition: all 0.15s;
+}
+
+.unitButton:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.unitActive {
+  border-color: var(--text) !important;
+  background: var(--text);
+  color: #fff !important;
+}
+
+/* 端数プレビュー */
+.preview {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 20px;
+  background: var(--accent-light);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: var(--radius-sm);
+}
+
+.previewLabel {
+  font-size: 13px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.previewAmount {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.noRemainder {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 12px 0;
+}
+
+/* 寄付ボタン */
+.donateButton {
+  width: 100%;
+  padding: 20px 24px;
+  background: var(--text);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.donateButton:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.donateButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.donateButton:disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}

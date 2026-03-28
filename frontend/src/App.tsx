@@ -1,13 +1,7 @@
-import { Header } from './components/Header'
-import { HomePage } from './pages/HomePage'
+import { DonationPage } from './pages/DonationPage'
 
 function App() {
-  return (
-    <>
-      <Header />
-      <HomePage />
-    </>
-  )
+  return <DonationPage />
 }
 
 export default App

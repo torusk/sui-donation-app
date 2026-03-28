@@ -1,0 +1,63 @@
+.wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+}
+
+.jar {
+  font-size: 96px;
+  line-height: 1;
+  display: block;
+  animation: float 4s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.10));
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.jarTilt {
+  animation: none;
+  transform: rotate(-12deg) scale(1.05);
+}
+
+.glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 20px;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: shadow 4s ease-in-out infinite alternate;
+}
+
+.coin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 32px;
+  z-index: 2;
+  animation: coinDrop 0.8s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes float {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-10px); }
+}
+
+@keyframes shadow {
+  from { opacity: 1; transform: translateX(-50%) scaleX(1); }
+  to   { opacity: 0.4; transform: translateX(-50%) scaleX(0.7); }
+}
+
+@keyframes coinDrop {
+  0%   { transform: translateX(-50%) translateY(0) rotate(0deg); opacity: 1; }
+  70%  { opacity: 1; }
+  100% { transform: translateX(-50%) translateY(80px) rotate(20deg); opacity: 0; }
+}
